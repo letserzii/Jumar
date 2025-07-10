@@ -70,13 +70,29 @@
 <body>
   <h1>Happy First Anniversary, Langga! 💖</h1>
   <img src="Messenger_creation_7A083A17-4261-47C8-8B7D-74180B80E0C5.png" alt="Anniversary Collage" />
+
+  <!-- Message container -->
   <div id="message">Click the button below for a surprise message! 💌</div>
-  <button onclick="showMessage()">Show Message</button>
+
+  <!-- Toggle button -->
+  <button id="toggleBtn" onclick="toggleMessage()">Show Message</button>
 
   <script>
-    function showMessage() {
-      document.getElementById("message").innerText = 
-        "Thank you for the love, care, and memories we've shared. Here's to many more years together, Langga! 🥰❤️";
+    let isMessageShown = false;
+
+    function toggleMessage() {
+      const msg = document.getElementById("message");
+      const btn = document.getElementById("toggleBtn");
+
+      if (!isMessageShown) {
+        msg.innerText = "Thank you for the love, care, and memories we've shared. Here's to many more years together, Langga! 🥰❤️";
+        btn.innerText = "Hide Message";
+        isMessageShown = true;
+      } else {
+        msg.innerText = "Click the button below for a surprise message! 💌";
+        btn.innerText = "Show Message";
+        isMessageShown = false;
+      }
     }
   </script>
 </body>
