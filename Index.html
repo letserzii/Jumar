@@ -69,29 +69,34 @@
 </head>
 <body>
   <h1>Happy First Anniversary, Langga! 💖</h1>
-  <img src="Messenger_creation_7A083A17-4261-47C8-8B7D-74180B80E0C5.png" alt="Anniversary Collage" />
 
-  <!-- Message container -->
+  <!-- Image with initial visibility -->
+  <img id="annivImage" src="Messenger_creation_7A083A17-4261-47C8-8B7D-74180B80E0C5.png" alt="Anniversary Collage" style="display: none;" />
+
+  <!-- Message area -->
   <div id="message">Click the button below for a surprise message! 💌</div>
 
-  <!-- Toggle button -->
-  <button id="toggleBtn" onclick="toggleMessage()">Show Message</button>
+  <!-- Button -->
+  <button id="toggleBtn" onclick="toggleContent()">Show Message</button>
 
   <script>
-    let isMessageShown = false;
+    let isShown = false;
 
-    function toggleMessage() {
+    function toggleContent() {
       const msg = document.getElementById("message");
+      const img = document.getElementById("annivImage");
       const btn = document.getElementById("toggleBtn");
 
-      if (!isMessageShown) {
+      if (!isShown) {
         msg.innerText = "Thank you for the love, care, and memories we've shared. Here's to many more years together, Langga! 🥰❤️";
+        img.style.display = "block";
         btn.innerText = "Hide Message";
-        isMessageShown = true;
+        isShown = true;
       } else {
         msg.innerText = "Click the button below for a surprise message! 💌";
+        img.style.display = "none";
         btn.innerText = "Show Message";
-        isMessageShown = false;
+        isShown = false;
       }
     }
   </script>
